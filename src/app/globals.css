@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #dc2626;
+  --color-primary-dark: #b91c1c;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fef3c7;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+
+/* Tool page shared styles */
+.tool-container {
+  @apply max-w-2xl mx-auto px-4 py-8;
+}
+
+.tool-title {
+  @apply text-3xl font-bold text-center mb-2;
+}
+
+.tool-subtitle {
+  @apply text-gray-500 text-center mb-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white font-medium rounded-xl hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 border-2 border-red-600 text-red-600 font-medium rounded-xl hover:bg-red-50 transition-colors;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
