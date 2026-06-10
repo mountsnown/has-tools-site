@@ -25,6 +25,10 @@ const toolMeta: Record<string, { title: string; description: string }> = {
     title: "图片压缩工具 - 在线压缩PNG/JPEG/WebP",
     description: "免费在线图片压缩工具，支持JPEG、PNG、WebP格式。拖拽上传，调整质量，实时预览压缩效果，一键下载。",
   },
+  "image-convert": {
+    title: "图片格式转换器 - PNG/JPG/WebP在线互转",
+    description: "免费在线图片格式转换工具，支持PNG、JPG、WebP格式互转。纯浏览器端Canvas处理，批量转换，无需上传服务器，安全快捷！",
+  },
   "text-tools": {
     title: "文本处理工具 - 字数统计 大小写转换 文本对比",
     description: "免费在线文本处理工具集：字数统计、大小写转换、文本差异对比。无需安装，打开即用。",
@@ -109,6 +113,18 @@ const toolMeta: Record<string, { title: string; description: string }> = {
     title: "肺癌治疗方案速查 - NSCLC/SCLC分期用药指南查询",
     description: "免费在线肺癌治疗方案速查工具，支持NSCLC和SCLC，按病理类型/临床分期/驱动基因/体能评分精准推荐方案。基于CSCO/NCCN指南，医学知识科普参考。",
   },
+  "eq-test": {
+    title: "情商测试 (EQ Test) - 在线免费情商测评",
+    description: "免费在线情商测试，基于丹尼尔·戈尔曼情商模型，5大维度20道情景题全面评估你的情商水平。涵盖自我认知、情绪管理、自我激励、共情能力、社交技巧，即测即知！",
+  },
+  "adult-iq-test": {
+    title: "成人智商测试 (IQ Test) - 在线免费智力测评",
+    description: "免费在线成人智商测试，涵盖逻辑推理、数学能力、语言理解、空间推理、抽象思维5大维度，20道标准测验题全面评估认知能力，即测即知！",
+  },
+  "aq-test": {
+    title: "逆商测试 (AQ Test) - 在线免费逆境商数测评",
+    description: "免费在线逆商测试，基于保罗·史托兹C.O.R.E模型，5大维度20道情景题全面评估你的逆境应对能力。涵盖控制感、起因归属、影响范围、持续性、应对能力，即测即知！",
+  },
   bazi: {
     title: "四柱预测（八字测算）- 免费在线算命查五行",
     description: "免费在线四柱预测工具，输入出生年月日时精准推算八字命盘、五行分布、日主属性。了解你的先天命运格局，测测你是什么命！",
@@ -164,6 +180,22 @@ const toolMeta: Record<string, { title: string; description: string }> = {
   "rash-check": {
     title: "皮疹鉴别 - 按形态分类过敏性/传染性皮疹",
     description: "免费在线皮疹鉴别工具，按皮疹形态（斑疹/丘疹/水疱/风团等）分类鉴别，传染性、过敏性、自身免疫性皮疹特征对比。健康科普参考。",
+  },
+  "gif-maker": {
+    title: "GIF制作器 - 免费在线GIF动图合成工具",
+    description: "免费在线GIF制作器，上传多张图片合成动态GIF。支持拖拽上传、帧排序、自定义帧延迟和输出尺寸，纯浏览器端处理保护隐私，一键下载GIF动图！",
+  },
+  "qr-decode": {
+    title: "二维码解码器 - 免费在线二维码扫描识别",
+    description: "免费在线二维码解码器，上传二维码图片或使用摄像头扫描，快速识别二维码内容。支持URL链接直接打开，一键复制解码结果。",
+  },
+  "text-diff": {
+    title: "文本差异对比 - 在线文本Diff对比工具",
+    description: "免费在线文本差异对比工具，两段文本逐行对比差异高亮。支持统一视图和并排对比两种模式，新增/删除/未变行数统计，开发者与写作者必备。",
+  },
+  crontab: {
+    title: "Crontab 表达式生成器 - 在线Cron定时任务配置",
+    description: "免费在线Crontab表达式生成器，可视化配置定时任务。支持常见预设、手动输入、含义解读和接下来5次执行时间计算，开发者日常必备工具。",
   },
 };
 

@@ -7,8 +7,8 @@
   --color-primary-dark: #b91c1c;
   --color-gold: #f59e0b;
   --color-gold-light: #fef3c7;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: system-ui, -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-mono: "SF Mono", "Cascadia Code", "Consolas", monospace;
 }
 
 :root {
