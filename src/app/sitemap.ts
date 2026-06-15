@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'color-palette', 'json', 'meme', 'name-score',
     'timestamp', 'base64', 'hash', 'bmi', 'age-calculator', 'uuid',
     'url-encode', 'dedup', 'word-count', 'regex', 'ip-lookup', 'hepatitis-b', 'hepatitis-b-treatment', 'novel-to-video', 'bazi',
+    'big-five', 'enneagram', 'disc', 'dark-triad', 'color-personality',
+    'love-languages', 'attachment-style', 'holland-code', 'psychology',
   ];
 
   return [

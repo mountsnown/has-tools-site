@@ -197,6 +197,42 @@ const toolMeta: Record<string, { title: string; description: string }> = {
     title: "Crontab 表达式生成器 - 在线Cron定时任务配置",
     description: "免费在线Crontab表达式生成器，可视化配置定时任务。支持常见预设、手动输入、含义解读和接下来5次执行时间计算，开发者日常必备工具。",
   },
+  psychology: {
+    title: "心理测试中心 - 12款免费心理测试 | 888工具站",
+    description: "免费在线心理测试中心，12款专业心理测评工具：MBTI、大五人格、九型人格、DISC、暗黑人格、色彩性格、爱情测试、爱的五种语言、依恋类型、EQ情商、AQ逆商、霍兰德职业兴趣。全部免费！",
+  },
+  "big-five": {
+    title: "大五人格测试 - OCEAN五大维度免费测评",
+    description: "免费在线大五人格测试，基于学术界最认可的OCEAN模型，20道题评估你外向性、宜人性、尽责性、神经质和开放性五个核心维度。即测即知！",
+  },
+  enneagram: {
+    title: "九型人格测试 - 免费Enneagram人格类型测评",
+    description: "免费在线九型人格测试，18道题发现你的核心人格类型。1-9号人格深度解析：完美主义者、助人者、成就者...探索你的内在动机！",
+  },
+  disc: {
+    title: "DISC 性格测试 - 免费行为风格测评",
+    description: "免费在线DISC性格测试，16道题评估支配力(D)、影响力(I)、稳健性(S)、谨慎性(C)四个维度。全球企业最常用的行为风格测评工具！",
+  },
+  "dark-triad": {
+    title: "暗黑人格测试 - Dark Triad免费测评",
+    description: "免费在线暗黑人格测试，18道题评估自恋、马基雅维利主义和精神病态三种特质。了解性格的暗黑面，更好地认识自己和他人！",
+  },
+  "color-personality": {
+    title: "色彩性格测试 - 红蓝黄绿免费性格测评",
+    description: "免费在线色彩性格测试，16道题测出你的性格颜色：红色行动派、蓝色思想派、黄色快乐派、绿色和平派。简单直观读懂性格！",
+  },
+  "love-languages": {
+    title: "爱的五种语言测试 - 免费爱之语测评",
+    description: "免费在线爱的五种语言测试，全球超3000万人使用。15道题发现你的爱之语：肯定言语、精心时刻、接受礼物、服务行动、身体接触。改善亲密关系！",
+  },
+  "attachment-style": {
+    title: "依恋类型测试 - 免费亲密关系模式测评",
+    description: "免费在线依恋类型测试，16道题判断你的依恋模式：安全型、焦虑型、回避型、恐惧型。了解你的亲密关系模式，建立更健康的感情！",
+  },
+  "holland-code": {
+    title: "霍兰德职业兴趣测试 - 免费RIASEC职业测评",
+    description: "免费在线霍兰德职业兴趣测试，18道题发现你的RIASEC六型职业代码。全球最广泛使用的职业测评工具，找到真正适合你的职业方向！",
+  },
 };
 
 export async function generateMetadata({
