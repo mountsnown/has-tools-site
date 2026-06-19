@@ -105,10 +105,6 @@ const toolMeta: Record<string, { title: string; description: string }> = {
     title: "乙肝是否需要抗病毒治疗 - HBsAg/HBV DNA结果判定",
     description: "免费在线乙肝抗病毒治疗判定工具，根据HBsAg、HBV DNA和高敏HBV DNA检测结果，快速判断是否需要抗病毒治疗。健康科普参考，即测即知！",
   },
-  "hepatitis-med-guide": {
-    title: "肝炎抗炎保肝用药指南 - 分级诊疗用药速查",
-    description: "免费在线肝炎抗炎保肝用药指南，涵盖轻/中/重度及重症肝炎的分级用药方案、静脉三联强化方案、各类肝病专属方案、监测停药规范。临床快速查阅，医学知识科普参考！",
-  },
   "novel-to-video": {
     title: "小说配图转视频 - AI自动生成动漫配图合成视频",
     description: "免费小说配图转视频工具，AI自动为每章生成动漫风格配图，合成GIF动图并整合为视频。支持.docx格式，AI文生图免费无限制！",
