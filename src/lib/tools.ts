@@ -214,6 +214,14 @@ export const tools: Tool[] = [
     href: '/tools/hepatitis-b-treatment',
   },
   {
+    id: 'hepatitis-med-guide',
+    name: '肝炎抗炎保肝用药指南',
+    description: '轻/中/重度及重症肝炎分级用药方案速查，含监测停药规范',
+    icon: '💊',
+    category: 'medical',
+    href: '/tools/hepatitis-med-guide',
+  },
+  {
     id: 'novel-to-video',
     name: '小说配图转视频',
     description: '将小说自动生成动漫配图并合成视频，AI文生图免费使用',
