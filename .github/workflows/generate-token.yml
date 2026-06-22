@@ -1,0 +1,76 @@
+name: Generate Vercel Token
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Get device auth code
+        id: device
+        run: |
+          RESPONSE=$(curl -s -X POST "https://vercel.com/api/oauth/device_authorization" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=cl_HYeOPBNtFMfHhaUn9L4QPfTZz6TP47bp&scope=read:user")
+          echo "Device response: $RESPONSE"
+          DEVICE_CODE=$(echo "$RESPONSE" | jq -r '.device_code // empty')
+          VERIFY_URI=$(echo "$RESPONSE" | jq -r '.verification_uri // empty')
+          VERIFY_COMPLETE=$(echo "$RESPONSE" | jq -r '.verification_uri_complete // empty')
+          INTERVAL=$(echo "$RESPONSE" | jq -r '.interval // 5')
+
+          echo "device_code=$DEVICE_CODE" >> $GITHUB_OUTPUT
+          echo "verify_uri=$VERIFY_URI" >> $GITHUB_OUTPUT
+          echo "verify_complete=$VERIFY_COMPLETE" >> $GITHUB_OUTPUT
+          echo "interval=$INTERVAL" >> $GITHUB_OUTPUT
+
+      - name: Show verification URL details
+        run: |
+          echo "Device code: ${{ steps.device.outputs.device_code }}"
+          echo "Verification URI: ${{ steps.device.outputs.verify_uri }}"
+          echo "Complete URI: ${{ steps.device.outputs.verify_complete }}"
+
+          # Check the verification page to understand the flow
+          echo "=== Fetching verification page ==="
+          curl -sL -D - "${{ steps.device.outputs.verify_complete }}" 2>&1 | head -50
+
+      - name: Poll for token
+        run: |
+          for i in $(seq 1 30); do
+            echo "Poll $i (delay 5s)..."
+            RESPONSE=$(curl -s -X POST "https://vercel.com/api/oauth/device_token" \
+              -H "Content-Type: application/x-www-form-urlencoded" \
+              -d "client_id=cl_HYeOPBNtFMfHhaUn9L4QPfTZz6TP47bp&device_code=${{ steps.device.outputs.device_code }}&grant_type=urn:ietf:params:oauth:grant-type:device_code")
+            echo "Response: $RESPONSE"
+
+            TOKEN=$(echo "$RESPONSE" | jq -r '.access_token // empty')
+            if [ -n "$TOKEN" ]; then
+              echo "GOT TOKEN!"
+              echo "token=$TOKEN" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            ERROR=$(echo "$RESPONSE" | jq -r '.error // empty')
+            if [ "$ERROR" = "access_denied" ]; then
+              echo "Access denied"
+              exit 1
+            fi
+
+            sleep 5
+          done
+          echo "Timeout"
+          exit 1
+
+      - name: Save token
+        run: |
+          mkdir -p ~/.local/share/com.vercel.cli
+          echo '{"token":"'"$TOKEN"'"}' > ~/.local/share/com.vercel.cli/auth.json
+          echo "Token saved"
+
+      - name: Deploy
+        run: npx vercel deploy --prod --yes --no-wait
