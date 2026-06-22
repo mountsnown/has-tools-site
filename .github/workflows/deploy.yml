@@ -1,0 +1,25 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Restore Vercel auth
+        run: |
+          mkdir -p ~/.local/share/com.vercel.cli
+          echo '${{ secrets.VERCEL_AUTH }}' > ~/.local/share/com.vercel.cli/auth.json
+
+      - name: Deploy to Vercel
+        run: npx vercel deploy --prod --yes
