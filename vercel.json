@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.has88888888.com"
+        }
+      ],
+      "destination": "/medicine"
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.has88888888.com"
+        }
+      ],
+      "destination": "/medicine/:path*"
+    }
+  ]
+}
