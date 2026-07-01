@@ -8,7 +8,7 @@
           "value": "medical.has88888888.com"
         }
       ],
-      "destination": "/medicine"
+      "destination": "/medicine/index.html"
     },
     {
       "source": "/:path*",
