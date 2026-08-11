@@ -94,6 +94,24 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white">
         <Header />
+        {/* Top Ad Banner */}
+        <div className="bg-gradient-to-r from-red-700 via-red-600 to-rose-700 text-white">
+          <div className="max-w-6xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-0">
+            <div className="flex-1 min-w-0">
+              <p className="text-sm md:text-base font-bold leading-tight">
+                🏥 中国顶级医院提前就诊住院，国外1/3的价格，1/10的住院等待时间
+              </p>
+            </div>
+            <div className="flex items-center gap-3 text-sm md:text-base shrink-0">
+              <a href="tel:13465321962" className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 rounded-lg px-3 py-1.5 font-bold transition-colors">
+                📞 13465321962
+              </a>
+              <a href="weixin://dl/chat?yzp88888898" className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 rounded-lg px-3 py-1.5 font-bold transition-colors">
+                💬 yzp88888898
+              </a>
+            </div>
+          </div>
+        </div>
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
