@@ -8,3 +8,4 @@ out/
 dist/
 
 .vercel
+scripts/.baidu_token.json

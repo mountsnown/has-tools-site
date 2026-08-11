@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stats": "node scripts/stats.mjs",
+    "stats:login": "node scripts/stats.mjs login"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
