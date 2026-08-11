@@ -95,20 +95,57 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white">
         <Header />
-        {/* Top Ad Banner */}
-        <div className="bg-gradient-to-r from-red-700 via-red-600 to-rose-700 text-white">
-          <div className="max-w-6xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-0">
-            <div className="flex-1 min-w-0">
-              <p className="text-sm md:text-base font-bold leading-tight">
-                🏥 中国顶级医院提前就诊住院，国外1/3的价格，1/10的住院等待时间
+        {/* Top Ad Banner - Dynamic */}
+        <style>{`
+          @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+          }
+          @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 16px rgba(251,191,36,0.2); }
+            50% { box-shadow: 0 0 16px rgba(255,255,255,0.5), 0 0 32px rgba(251,191,36,0.4); }
+          }
+          @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+          }
+          @keyframes slide-in {
+            0% { transform: translateX(10px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+          }
+          .ad-shimmer {
+            background: linear-gradient(110deg, #dc2626 30%, #ef4444 38%, #fbbf24 42%, #ef4444 46%, #dc2626 50%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+          }
+          .ad-btn {
+            animation: pulse-glow 2s ease-in-out infinite;
+            transition: transform 0.2s;
+          }
+          .ad-btn:hover {
+            transform: scale(1.05);
+            animation: none;
+            box-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 40px rgba(251,191,36,0.6);
+          }
+          .ad-float {
+            animation: float-icon 1.5s ease-in-out infinite;
+            display: inline-block;
+          }
+        `}</style>
+        <div className="ad-shimmer text-white overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-0">
+            <div className="flex-1 min-w-0 flex items-center gap-2">
+              <span className="ad-float text-xl md:text-2xl">🏥</span>
+              <p className="text-sm md:text-base font-extrabold leading-tight tracking-wide">
+                中国顶级医院提前就诊住院<span className="hidden sm:inline">，</span><br className="sm:hidden" />国外<span className="text-amber-300">1/3</span>的价格，<span className="text-amber-300">1/10</span>的住院等待时间
               </p>
             </div>
-            <div className="flex items-center gap-3 text-sm md:text-base shrink-0">
-              <a href="tel:13465321962" className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 rounded-lg px-3 py-1.5 font-bold transition-colors">
-                📞 13465321962
+            <div className="flex items-center gap-2.5 text-sm md:text-base shrink-0">
+              <a href="tel:13465321962" className="ad-btn inline-flex items-center gap-1 bg-white/20 hover:bg-white/40 rounded-full px-4 py-2 font-bold transition-all">
+                <span className="ad-float" style={{animationDelay: "0s"}}>📞</span> 13465321962
               </a>
-              <a href="weixin://dl/chat?yzp88888898" className="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 rounded-lg px-3 py-1.5 font-bold transition-colors">
-                💬 yzp88888898
+              <a href="weixin://dl/chat?yzp88888898" className="ad-btn inline-flex items-center gap-1 bg-green-500/30 hover:bg-green-500/50 rounded-full px-4 py-2 font-bold transition-all" style={{animationDelay: "0.5s"}}>
+                <span className="ad-float" style={{animationDelay: "0.3s"}}>💬</span> yzp88888898
               </a>
             </div>
           </div>
